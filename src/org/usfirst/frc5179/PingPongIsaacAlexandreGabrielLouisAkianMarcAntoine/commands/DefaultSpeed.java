@@ -12,13 +12,16 @@
 package org.usfirst.frc5179.PingPongIsaacAlexandreGabrielLouisAkianMarcAntoine.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc5179.PingPongIsaacAlexandreGabrielLouisAkianMarcAntoine.Robot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import org.usfirst.frc5179.PingPongIsaacAlexandreGabrielLouisAkianMarcAntoine.OI;
 
 /**
  *
  */
 public class  DefaultSpeed extends Command {
 
+	
     public DefaultSpeed() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -33,6 +36,8 @@ public class  DefaultSpeed extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	OI.WantedSpeed = (5 * OI.Percentage);
+    	SmartDashboard.putNumber("Current ball speed", OI.BallSpeed); // Update the dashboard for the wanted speed
     }
 
     // Make this return true when this Command no longer needs to run execute()
