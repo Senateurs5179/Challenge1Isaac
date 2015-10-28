@@ -36,8 +36,8 @@ public class  CustomSpeed extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
       	SmartDashboard.putNumber("Current ball speed", OI.BallSpeed); // Update the dashboard for the wanted speed
-    	double SetSpeed = SmartDashboard.getNumber("Set ball speed (In ball per minute)");
-    	OI.WantedSpeed = (SetSpeed*OI.Percentage); // the max ball number is 8 balls per minute with the current ratio
+    	OI.WantedBPM = SmartDashboard.getNumber("Set ball speed (In ball per minute)");
+    	OI.WantedSpeed = (OI.WantedBPM*OI.Percentage); // the max ball number is 8 balls per minute with the current ratio
     }
 
     // Make this return true when this Command no longer needs to run execute()

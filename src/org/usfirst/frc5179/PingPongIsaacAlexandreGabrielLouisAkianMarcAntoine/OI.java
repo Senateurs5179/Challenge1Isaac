@@ -21,10 +21,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
 
-	public static double Percentage = 195D/15.8672222D; // Set default gear ratio for a 195 RPM motor and a ball is launched every 15.9 motor rotations
+	public static double Percentage = ((195D/15.8672222D)/100); // Set default gear ratio for a 195 RPM motor and a ball is launched every 15.9 motor rotations
 	public static double WantedSpeed = 0; // Set WantedSpeed to 0 by default so that the motor is idle when no command is run
-	public static double BallSpeed = (Percentage/15.8672222D); // Human-readable ball speed (in balls launched per minutes)
-
+	public static double BallSpeed = (Percentage*15.8672222D); // Human-readable ball speed (in balls launched per minutes)
+	public static double WantedBPM = 0;
 	//// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button

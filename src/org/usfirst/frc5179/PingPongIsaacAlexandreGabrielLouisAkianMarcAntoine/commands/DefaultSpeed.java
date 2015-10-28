@@ -36,7 +36,8 @@ public class  DefaultSpeed extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	OI.WantedSpeed = (5 * OI.Percentage);
+    	OI.WantedBPM = 5;
+    	OI.WantedSpeed = (OI.WantedBPM * OI.Percentage);
     	SmartDashboard.putNumber("Current ball speed", OI.BallSpeed); // Update the dashboard for the wanted speed
     }
 
